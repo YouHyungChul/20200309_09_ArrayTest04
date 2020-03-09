@@ -69,6 +69,8 @@ public class MainDrive {
 //		이번주 당첨번호를 배열로. 5, 18, 20, 23, 30, 34
 		
 		int[] thisWeekLotto = {5, 18, 20, 23, 30, 34};
+//		보너스번호는 21이다. 변수 저장
+		int bonusNum = 21;
 		
 //		몇등인지 판단.
 //		1등? 내가 입력한 숫자와 / 당첨번호의 숫자중 같은 갯수가 6개면.
@@ -103,7 +105,30 @@ public class MainDrive {
 			System.out.println("1등!");
 		}
 		else if (correctCount == 5) {
-			System.out.println("3등!");
+			
+//			내가 보너스 번호를 맞췄는가? 맞추면 2등 아니면 3등.
+//			맞췄는가?  true / false => boolean변수로 결과 저장
+			boolean isCorrectBonus = false;
+			
+//			보너스번호를 맞춘다 => 보너스번호가 내가입력한 배열안에 들어있는가?
+//			같은 값이 하나라도 있는가?
+			
+			for (int i=0; i < userLottoArr.length ; i++) {
+//				내 입력번호와, 보너스번호가 같다면
+				if (userLottoArr[i] == bonusNum) {
+					
+					isCorrectBonus = true;
+				}
+			}
+			
+//			무조건 3등 출력 => 보너스번호 여부에 따라 2등, 3등 구별 출력.
+			if (isCorrectBonus) {
+				System.out.println("2등!");
+			}
+			else {
+				System.out.println("3등!");				
+			}
+			
 		}
 		else if (correctCount == 4) {
 			System.out.println("4등!");
