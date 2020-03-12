@@ -1,5 +1,6 @@
 package code;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MainDrive {
@@ -72,11 +73,14 @@ public class MainDrive {
 			
 		}
 		
+//		작은 순서부터 큰 순서로 당첨번호를 정렬. => 객체지향 장점 활용.
+		Arrays.sort(thisWeekLotto);
+		
 		
 //		당첨번호 배열에 뭐가 들어갔는지 출력
-		for (int num : thisWeekLotto) {
-			System.out.println(num);
-		}
+//		for (int num : thisWeekLotto) {
+//			System.out.println(num);
+//		}
 		
 		
 		
